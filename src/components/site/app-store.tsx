@@ -13,7 +13,7 @@ export function AppStore() {
     <section className="py-10 md:py-14">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[36px] bg-dark-plum p-8 md:p-14">
+          <div className="relative overflow-hidden rounded-[36px] bg-dark-plum p-5 sm:p-6 md:p-14">
             <div className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
               <div className="grid grid-cols-4 gap-3 md:grid-cols-5 md:gap-4">
                 {apps.concat(apps).slice(0, 20).map((a, i) => (

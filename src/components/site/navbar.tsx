@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { GoMenuLogo } from "./logo";
@@ -8,6 +8,7 @@ export function Navbar() {
   const { t, toggle, lang } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   const links = [
     { href: "/#home", label: t("nav.home"), active: true },
@@ -23,8 +24,32 @@ export function Navbar() {
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent | TouchEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+    <header ref={wrapperRef} className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <div
         className={`pointer-events-auto flex w-full max-w-[1200px] items-center justify-between rounded-full border border-black/5 bg-white/80 px-4 py-2.5 backdrop-blur-md transition-shadow md:px-6 ${
           scrolled ? "shadow-[0_10px_40px_-15px_rgba(80,40,140,0.25)]" : "shadow-[0_4px_20px_-10px_rgba(80,40,140,0.15)]"

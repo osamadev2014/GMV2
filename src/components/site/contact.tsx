@@ -23,23 +23,23 @@ export function Contact() {
 
               <form onSubmit={(e) => e.preventDefault()} className="mt-8 space-y-4">
                 <Field label={t("contact.f1")}>
-                  <input placeholder={t("contact.f1p")} className="input" />
+                  <input placeholder={t("contact.f1p")} className="w-full rounded-full bg-[oklch(0.97_0.02_295)] px-5 py-3.5 text-sm border border-transparent outline-none transition focus:border-[oklch(0.52_0.24_295)] focus:bg-white" />
                 </Field>
                 <Field label={t("contact.f2")}>
-                  <input type="email" placeholder="example@email.com" className="input" />
+                  <input type="email" placeholder="example@email.com" className="w-full rounded-full bg-[oklch(0.97_0.02_295)] px-5 py-3.5 text-sm border border-transparent outline-none transition focus:border-[oklch(0.52_0.24_295)] focus:bg-white" />
                 </Field>
                 <Field label={t("contact.f3")}>
-                  <input placeholder={t("contact.f3p")} className="input" />
+                  <input placeholder={t("contact.f3p")} className="w-full rounded-full bg-[oklch(0.97_0.02_295)] px-5 py-3.5 text-sm border border-transparent outline-none transition focus:border-[oklch(0.52_0.24_295)] focus:bg-white" />
                 </Field>
                 <Field label={t("contact.f4")}>
                   <div className="flex gap-2">
-                    <select className="input w-28 shrink-0">
+                    <select className="w-28 shrink-0 rounded-full bg-[oklch(0.97_0.02_295)] px-5 py-3.5 text-sm border border-transparent outline-none transition focus:border-[oklch(0.52_0.24_295)] focus:bg-white">
                       <option>🇸🇦 +966</option>
                       <option>🇦🇪 +971</option>
                       <option>🇪🇬 +20</option>
                       <option>🇰🇼 +965</option>
                     </select>
-                    <input placeholder="5XXXXXXXX" className="input flex-1" />
+                    <input placeholder="5XXXXXXXX" className="flex-1 rounded-full bg-[oklch(0.97_0.02_295)] px-5 py-3.5 text-sm border border-transparent outline-none transition focus:border-[oklch(0.52_0.24_295)] focus:bg-white" />
                   </div>
                 </Field>
                 <button
@@ -54,9 +54,6 @@ export function Contact() {
           </Reveal>
         </div>
       </Container>
-
-      <style>{`.input{width:100%;border-radius:9999px;background:oklch(0.97 0.02 295);padding:14px 20px;font-size:14px;border:1px solid transparent;outline:none;transition:.2s}
-        .input:focus{border-color:oklch(0.52 0.24 295);background:#fff}`}</style>
     </section>
   );
 }

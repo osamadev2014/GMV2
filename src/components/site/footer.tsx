@@ -27,8 +27,8 @@ export function Footer() {
 
   return (
     <footer className="px-4 pb-10">
-      <div className="mx-auto max-w-[1200px] rounded-[36px] bg-dark-plum px-8 py-12 text-white md:px-14 md:py-14">
-        <div className="grid gap-10 md:grid-cols-4 md:gap-8">
+      <div className="mx-auto max-w-[1200px] rounded-[36px] bg-dark-plum px-5 py-8 text-white sm:px-8 sm:py-10 md:px-14 md:py-14">
+        <div className="grid gap-8 sm:gap-10 md:grid-cols-4 md:gap-8">
           {/* Logo + description */}
           <div className="md:col-span-1">
             <GoMenuLogo className="h-7 text-white" />

@@ -25,7 +25,7 @@ export function FAQ() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center">
+        <div className="mt-12 grid gap-6 md:grid-cols-[1fr_1.2fr] md:items-center md:gap-10">
           <Reveal>
             <img src="/img/misc/faq.png" alt="faq" className="mx-auto max-w-sm" />
           </Reveal>

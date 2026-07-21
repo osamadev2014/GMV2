@@ -104,9 +104,9 @@ function PricingCard({ plan }: { plan: PlanData }) {
   const { t } = useLang();
   return (
     <div
-      className={`relative flex flex-col rounded-3xl border bg-white p-8 transition-shadow duration-300 ${
+      className={`relative flex flex-col rounded-3xl border bg-white p-5 sm:p-6 md:p-8 transition-shadow duration-300 ${
         plan.featured
-          ? "border-2 border-[#7C3AED] shadow-[0_10px_25px_-5px_rgba(124,58,237,0.15)] scale-[1.03] z-2"
+          ? "border-2 border-[#7C3AED] shadow-[0_10px_25px_-5px_rgba(124,58,237,0.15)] md:scale-[1.03] md:z-2"
           : "border-gray-200 shadow-sm hover:-translate-y-1 hover:shadow-lg"
       }`}
     >
@@ -133,7 +133,7 @@ function PricingCard({ plan }: { plan: PlanData }) {
 
       <div className="mt-3 flex items-end gap-1.5 flex-wrap">
         <span className="text-lg font-bold">{t("pricing.currency")}</span>
-        <span className="text-[2.75rem] font-extrabold leading-none">{plan.price}</span>
+        <span className="text-[2rem] sm:text-[2.375rem] md:text-[2.75rem] font-extrabold leading-none">{plan.price}</span>
         <span className="mb-1 text-sm text-gray-500">{t("pricing.period")}</span>
       </div>
 

@@ -75,21 +75,21 @@ export function Hero() {
             <motion.img
               src="/img/hero/sales.png"
               alt=""
-              className="absolute -start-4 top-10 w-[38%] max-w-[280px] md:-start-8 md:top-8"
+              className="absolute -start-4 top-10 hidden w-[38%] max-w-[280px] sm:block md:-start-8 md:top-8"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.img
               src="/img/hero/order.png"
               alt=""
-              className="absolute -end-2 top-4 w-[32%] max-w-[240px] md:-end-6 md:top-6"
+              className="absolute -end-2 top-4 hidden w-[32%] max-w-[240px] sm:block md:-end-6 md:top-6"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             />
             <motion.img
               src="/img/hero/points.png"
               alt=""
-              className="absolute -end-4 bottom-[-30px] w-[34%] max-w-[260px] md:-end-8"
+              className="absolute -end-4 bottom-[-30px] hidden w-[34%] max-w-[260px] sm:block md:-end-8"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
             />
