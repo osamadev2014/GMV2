@@ -1,0 +1,96 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-pink-accent: var(--pink-accent);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-dark-plum: var(--dark-plum);
+
+  --font-sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.005 300);
+  --foreground: oklch(0.18 0.03 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.03 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.03 285);
+  --primary: oklch(0.52 0.24 295);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-soft: oklch(0.94 0.05 295);
+  --secondary: oklch(0.96 0.01 300);
+  --secondary-foreground: oklch(0.18 0.03 285);
+  --muted: oklch(0.96 0.01 300);
+  --muted-foreground: oklch(0.5 0.02 285);
+  --accent: oklch(0.94 0.05 295);
+  --accent-foreground: oklch(0.35 0.2 295);
+  --pink-accent: oklch(0.72 0.22 350);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 285);
+  --input: oklch(0.92 0.01 285);
+  --ring: oklch(0.52 0.24 295);
+  --dark-plum: oklch(0.19 0.05 305);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility pink-underline {
+  position: relative;
+  display: inline-block;
+  &::after {
+    content: "";
+    position: absolute;
+    left: -2%;
+    right: -2%;
+    bottom: -6px;
+    height: 10px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 8 C 40 2, 80 12, 120 6 S 190 2, 198 8' stroke='%23ec4899' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+}
